@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-
+import SvgFile from '../assets/react.svg';
 import { Link } from 'gatsby';
 
 const NavLink = styled(Link)`
@@ -16,6 +16,7 @@ const NavLink = styled(Link)`
 
   &.current-page {
     border-bottom: 2px solid #222;
+    color: lightgoldenrodyellow;
   }
 
   &:last-of-type {
@@ -26,16 +27,25 @@ const NavLink = styled(Link)`
 const Header = () => (
   <header
     css={css`
-      background: #eee;
-      border-bottom: 1px solid #ddd;
+      background: tomato;
       display: flex;
       justify-content: space-between;
       padding: 0.5rem calc((100vw - 550px - 0.5px) / 2);
+      box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
     `}
   >
     <NavLink to="/" fontWeight="bold">
-      {' '}
-      FEM Workshop
+      <img
+        css={css`
+          height: 1.2em;
+          vertical-align: middle;
+          padding-right: 0.2em;
+        `}
+        src={SvgFile}
+        alt="Logo"
+      />
+      REVERSE-ENG BLOG
     </NavLink>
     <nav
       css={css`
